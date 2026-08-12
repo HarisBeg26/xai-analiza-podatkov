@@ -1,0 +1,16 @@
+﻿dimenzija,ucinek,b,SE,p,znacilno
+Zaupanje,cas (na ogled),0.111,0.057,0.05,mejno
+Zaupanje,pozitivni bias,0.337,0.181,0.063,mejno
+Zaupanje,negativni bias,-0.336,0.173,0.052,mejno
+Nezaupanje,cas (na ogled),-0.022,0.039,0.564,ne
+Nezaupanje,pozitivni bias,0.003,0.124,0.98,ne
+Nezaupanje,negativni bias,0.021,0.119,0.861,ne
+Zadovoljstvo z razlago,cas (na ogled),-0.025,0.042,0.55,ne
+Zadovoljstvo z razlago,pozitivni bias,0.361,0.143,0.012,da
+Zadovoljstvo z razlago,negativni bias,-0.295,0.138,0.033,da
+Izvedljivost,cas (na ogled),-0.021,0.026,0.425,ne
+Izvedljivost,pozitivni bias,0.102,0.09,0.26,ne
+Izvedljivost,negativni bias,-0.274,0.087,0.002,da
+Mentalni model,cas (na ogled),0.01,0.007,0.161,ne
+Mentalni model,pozitivni bias,0.018,0.025,0.474,ne
+Mentalni model,negativni bias,-0.005,0.024,0.839,ne
