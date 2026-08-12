@@ -55,79 +55,6 @@ CANDIDATE_META = {
 }
 
 
-MENTAL_MODEL_Q3A_EXPECTED = {
-    "janeznovak": [
-        "location",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "enverbajrami": [
-        "location",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "zivakopitar": [
-        "location",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "majanikolic": [
-        "location",
-        "language",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "markoprevc": [
-        "location",
-        "language",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "amirabasic": [
-        "location",
-        "language",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-}
-
-
-MENTAL_MODEL_CONCEPT_PATTERNS = {
-    "location": [r"\boddaljen", r"\blokacij", r"\bkraj", r"\bblizin"],
-    "language": [r"\bjezik", r"\bangles", r"\bnemsc", r"\bb1\b"],
-    "digital": [r"\bdigital", r"\bracunal", r"\bexcel", r"\bkompetenc"],
-    "employment_status": [r"\bstatus", r"\bzaposlit", r"\bstudent"],
-    "certificates": [r"\bcertifikat", r"\bcertifik"],
-    "education": [r"\bizobraz", r"\bstopnj", r"\bsrednj", r"\bfakult"],
-    "work_experience": [r"\bizkus", r"\bdelovn"],
-    "project_history": [r"\bprojekt", r"\bgodovin"],
-}
-
-
 def normalize_text(value: object) -> str:
     if pd.isna(value):
         return ""
@@ -269,35 +196,6 @@ def build_bias_document() -> str:
     return "\n".join(lines)
 
 
-def build_mental_model_draft() -> str:
-    lines = [
-        "# Osnutek Pravil Za Mentalne Modele",
-        "",
-        "To je začetni osnutek pravil. Dataset-a še nisem samodejno ocenjeval z 0/1, ker bi bilo to brez potrditve kriterijev preveč tvegano.",
-        "",
-        "Predlog za ročno potrditev pravil:",
-    ]
-    for candidate, meta in CANDIDATE_META.items():
-        lines.extend(
-            [
-                "",
-                f"## {candidate}",
-                f"- Kandidat: {meta['candidate_fit']}",
-                f"- Biased: {meta['biased']}",
-                f"- Tip biasa: {meta['bias_type'] or 'brez_biasa'}",
-                "- Sprejemljive pravilne razlage naj omenjajo relevantne kompetence iz CV-ja (izobrazba, izkušnje, jeziki, digitalne kompetence) in pri biased primerih tudi pristranski vpliv nacionalnosti.",
-                "- Napačne razlage bi bile tiste, ki kandidata postavijo v nasprotno kategorijo ali zgrešijo ključni bias pri biased scenarijih.",
-            ]
-        )
-    lines.extend(
-        [
-            "",
-            "Naslednji varen korak je, da skupaj potrdiva 5–10 sprejemljivih ključnih formulacij za vsakega kandidata, nato pa lahko dodam 0/1 stolpce za pravilnost nalog.",
-        ]
-    )
-    return "\n".join(lines)
-
-
 def normalize_free_text(value: object) -> str:
     if pd.isna(value):
         return ""
@@ -309,156 +207,11 @@ def normalize_free_text(value: object) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def score_q3a(text: object) -> int:
-    normalized = normalize_free_text(text)
-    if not normalized or normalized in {"ne vem", "dobro", "smiselno", "v redu"}:
-        return 0
-
-    patterns = {
-        "experience": [r"\bizkus", r"\bdelovn"],
-        "education": [r"\bizobraz"],
-        "digital": [r"\bdigital", r"\bkompetenc", r"\bcertifikat", r"\bracunal"],
-        "language": [r"\bjezik", r"\bangles"],
-        "nationality": [r"\bnacional", r"\bdrzavlj", r"\btuj"],
-        "gender": [r"\bspol", r"\bzensk", r"\bmosk"],
-        "location": [r"\blokacij", r"\boddaljen"],
-    }
-
-    matched = set()
-    for group, group_patterns in patterns.items():
-        if any(re.search(pattern, normalized) for pattern in group_patterns):
-            matched.add(group)
-
-    core_present = bool({"experience", "education", "digital", "language"} & matched)
-    context_present = bool({"nationality", "gender", "location"} & matched)
-    return int(len(matched) >= 3 and core_present and context_present)
-
-
 def score_q3b2(label_text: object) -> int:
     normalized = normalize_free_text(label_text)
     return int(
         normalized in {"delno smiselna", "ne ne zdi se smiselna"}
     )
-
-
-def score_q3b3(text: object, candidate_name: str) -> int:
-    normalized = normalize_free_text(text)
-    if not normalized:
-        return 0
-
-    no_issue_patterns = [
-        r"^/$",
-        r"^\.$",
-        r"^\\\\$",
-        r"\bni sporno\b",
-        r"\bnic ni sporno\b",
-        r"\bnic se mi ne zdi napacno\b",
-        r"\bni napacna\b",
-        r"\bni nenavadna\b",
-        r"\bzdi se vredu\b",
-        r"\bv redu\b",
-        r"\bvse ok\b",
-        r"\brazlaga se mi zdi dobra\b",
-        r"\bzdi se mi smiselno\b",
-        r"\bzdi se smiselna\b",
-        r"\bbrez komentar",
-    ]
-    bias_patterns = [
-        r"\bnacional",
-        r"\bdrzavlj",
-        r"\bspol",
-        r"\bzensk",
-        r"\bmosk",
-        r"\bpristr",
-        r"\bdiskrimin",
-        r"\bbias",
-        r"\bseksis",
-        r"\bxenoph",
-    ]
-
-    biased_candidate = CANDIDATE_META.get(candidate_name, {}).get("biased", 0) == 1
-    if biased_candidate:
-        return int(any(re.search(pattern, normalized) for pattern in bias_patterns))
-
-    return int(any(re.search(pattern, normalized) for pattern in no_issue_patterns))
-
-
-def score_q3c2(label_text: object) -> int:
-    normalized = normalize_free_text(label_text)
-    return int(normalized == "visoka negativna ocena")
-
-
-MENTAL_MODEL_Q3A_EXPECTED = {
-    "Janez Novak": [
-        "location",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "Enver Bajrami": [
-        "location",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "Å½iva Kopitar": [
-        "location",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "Maja NikoliÄ": [
-        "location",
-        "language",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "Marko Prevc": [
-        "location",
-        "language",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-    "Amira BaÅ¡iÄ‡": [
-        "location",
-        "language",
-        "digital",
-        "employment_status",
-        "certificates",
-        "education",
-        "work_experience",
-        "project_history",
-    ],
-}
-
-
-MENTAL_MODEL_CONCEPT_PATTERNS = {
-    "location": [r"\boddaljen", r"\blokacij", r"\bkraj", r"\bblizin"],
-    "language": [r"\bjezik", r"\bangles", r"\bnemsc", r"\bb1\b"],
-    "digital": [r"\bdigital", r"\bracunal", r"\bexcel", r"\bkompetenc"],
-    "employment_status": [r"\bstatus", r"\bzaposlit", r"\bstudent"],
-    "certificates": [r"\bcertifikat", r"\bcertifik"],
-    "education": [r"\bizobraz", r"\bstopnj", r"\bsrednj", r"\bfakult"],
-    "work_experience": [r"\bizkus", r"\bdelovn"],
-    "project_history": [r"\bprojekt", r"\bgodovin"],
-}
 
 
 def contains_any(patterns: list[str], normalized_text: str) -> bool:
@@ -471,97 +224,6 @@ def extract_mental_model_concepts(normalized_text: str) -> set[str]:
         if contains_any(patterns, normalized_text):
             matched.add(concept)
     return matched
-
-
-def q3a_expected_for_candidate(candidate_name: str) -> list[str]:
-    candidate_norm = normalize_text(candidate_name)
-    return MENTAL_MODEL_Q3A_EXPECTED.get(candidate_norm, [])
-
-
-def build_mental_model_draft() -> str:
-    lines = [
-        "# Osnutek Pravil Za Mentalne Modele",
-        "",
-        "Pravila so posodobljena glede na roÄno potrjene pravilne odgovore.",
-        "",
-        "## Q3B_2 - Razumevanje: zaznavanje napak",
-        "",
-        "Pravilna odgovora sta:",
-        "- Delno smiselna",
-        "- Ne, ne zdi se smiselna",
-        "",
-        "## Q3A in Q3B_3 po posameznem Å¾ivljenjepisu",
-    ]
-    for candidate, meta in CANDIDATE_META.items():
-        q3a_concepts = ", ".join(q3a_expected_for_candidate(candidate))
-        candidate_norm = normalize_text(candidate)
-        if candidate_norm == "zivakopitar":
-            q3b3_rule = (
-                "Sprejemljiv odgovor omenja, da ni napaÄnih razlag, vendar je nenavadno ali sporno, "
-                "da je bila narodnost pomemben faktor."
-            )
-        elif candidate_norm == "amirabasic":
-            q3b3_rule = (
-                "Sprejemljiv odgovor omenja napako, da je sistem uporabil spol in/ali narodnost "
-                "za negativno odloÄitev o kandidatki."
-            )
-        elif meta["candidate_fit"] == "primeren":
-            q3b3_rule = (
-                "Sprejemljiv odgovor omenja, da ni napaÄnih razlag in da je sistem kandidata pravilno "
-                "oznaÄil kot primernega."
-            )
-        else:
-            q3b3_rule = (
-                "Sprejemljiv odgovor omenja, da ni napaÄnih razlag in da je sistem kandidata pravilno "
-                "oznaÄil kot neprimernega."
-            )
-        lines.extend(
-            [
-                "",
-                f"## {candidate}",
-                f"- Kandidat: {meta['candidate_fit']}",
-                f"- Biased: {meta['biased']}",
-                f"- Tip biasa: {meta['bias_type'] or 'brez_biasa'}",
-                f"- Q3A: sprejemljive pravilne razlage naj omenjajo veÄ relevantnih konceptov, kot so: {q3a_concepts}.",
-                f"- Q3B_3: {q3b3_rule}",
-                "- NapaÄni odgovori so tisti, ki kandidata postavijo v nasprotno kategorijo, ne zaznajo bias-a tam kjer je prisoten ali navajajo oÄitno nepovezane razloge.",
-            ]
-        )
-    lines.extend(
-        [
-            "",
-            "## Q3C - Napovedno sklepanje",
-            "",
-            "Za `Q3C_2` sta pravilna odgovora:",
-            "- Rahlo negativna ocena",
-            "- Visoka negativna ocena",
-            "",
-            "Za `Q3C_3` je pravilen vrstni red:",
-            "1. Digitalne kompetence",
-            "2. Stopnja izobrazbe",
-            "3. Delovne izkuÅ¡nje",
-            "4. Jezikovne kompetence",
-            "5. Lokacija",
-            "6. Nacionalnost",
-            "7. Spol",
-        ]
-    )
-    return "\n".join(lines)
-
-
-def score_q3a(text: object, candidate_name: str) -> int:
-    normalized = normalize_free_text(text)
-    if not normalized or normalized in {"ne vem", "dobro", "smiselno", "v redu"}:
-        return 0
-
-    matched = extract_mental_model_concepts(normalized)
-    expected = set(q3a_expected_for_candidate(candidate_name))
-    expected_hits = matched & expected
-    core_present = bool({"education", "work_experience", "digital"} & expected_hits)
-    supporting_present = bool(
-        {"location", "employment_status", "certificates", "project_history", "language"} & expected_hits
-    )
-    return int(len(expected_hits) >= 4 and core_present and supporting_present)
 
 
 def score_q3b3(text: object, candidate_name: str) -> int:
@@ -810,22 +472,6 @@ def score_q3c3_item(value: object, expected_rank: int) -> int:
     return int(int(numeric) == expected_rank)
 
 
-def reverse_1_to_5(value: object) -> float | pd.NA:
-    numeric = pd.to_numeric(pd.Series([value]), errors="coerce").iloc[0]
-    if pd.isna(numeric) or numeric not in {1, 2, 3, 4, 5}:
-        return pd.NA
-    mapping = {1: 5, 2: 4, 3: 3, 4: 2, 5: 1}
-    return mapping.get(int(numeric), pd.NA)
-
-
-def reverse_1_to_7(value: object) -> float | pd.NA:
-    numeric = pd.to_numeric(pd.Series([value]), errors="coerce").iloc[0]
-    if pd.isna(numeric) or numeric not in {1, 2, 3, 4, 5, 6, 7}:
-        return pd.NA
-    mapping = {1: 7, 2: 6, 3: 5, 4: 4, 5: 3, 6: 2, 7: 1}
-    return mapping.get(int(numeric), pd.NA)
-
-
 def reverse_likert_1_to_5(value: object) -> float | pd.NA:
     numeric = pd.to_numeric(pd.Series([value]), errors="coerce").iloc[0]
     if pd.isna(numeric) or int(numeric) == -1:
@@ -861,18 +507,35 @@ def next_available_path(path: Path) -> Path:
         counter += 1
 
 
-def main() -> None:
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+# ============================================================================
+# FAZE OBDELAVE
+#
+# main() spodaj kliče te funkcije po vrsti. Vsaka faza doda svoj sklop
+# stolpcev v tabelo `survey`. Vrstni red klicev določa vrstni red stolpcev
+# v izvoženem CSV, zato ga ne spreminjaj brez razloga.
+# ============================================================================
 
+
+def load_inputs() -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Prebere surove odgovore in labele odgovorov iz izvoza 1KA."""
     survey = pd.read_excel(RAW_PATH, sheet_name="Podatki")
     survey = survey[survey["status"] != "Status"].copy()
     labels = pd.read_excel(RAW_PATH, sheet_name="Labele odgovorov")
     labels = labels[labels["status"] != "Status"].copy()
-    official_codes = load_official_codes()
+    return survey, labels
+
+
+def add_participant_identification(
+    survey: pd.DataFrame, labels: pd.DataFrame, official_codes: pd.DataFrame
+) -> None:
+    """Razreši 8-mestne kode udeležencev in označi veljavne enote.
+
+    Doda stolpce analiza_resolved_code, analiza_code_resolution in
+    analiza_valid_resolved. Veljavna enota je zaključena anketa (status 6),
+    ki ne vsebuje besede "test" in ima razrešljivo kodo.
+    """
     official_code_set = set(official_codes["Koda"])
     prefix_map = build_prefix_map(official_codes)
-    official_cv_lookup = dict(zip(official_codes["Koda"], official_codes["Opazovani_CV"]))
-    aliases = build_candidate_aliases()
 
     survey["analiza_status_num"] = pd.to_numeric(survey["status"], errors="coerce")
     labels["recnum"] = pd.to_numeric(labels["recnum"], errors="coerce")
@@ -911,6 +574,14 @@ def main() -> None:
         "analiza_resolved_code"
     ].notna()
 
+
+def add_candidate_metadata(survey: pd.DataFrame, official_codes: pd.DataFrame) -> None:
+    """Ugotovi, kateri življenjepis je udeleženec opazoval, in pripne njegove
+    lastnosti iz CANDIDATE_META (pristranskost, primernost, pričakovana odločitev).
+    """
+    official_cv_lookup = dict(zip(official_codes["Koda"], official_codes["Opazovani_CV"]))
+    aliases = build_candidate_aliases()
+
     survey["analiza_cv_name"] = survey.apply(
         lambda row: canonical_candidate_name(
             row["analiza_q7_clean"],
@@ -935,14 +606,24 @@ def main() -> None:
         lambda name: CANDIDATE_META.get(name, {}).get("expected_decision", "")
     )
 
+
+def attach_answer_labels(survey: pd.DataFrame, labels: pd.DataFrame) -> pd.DataFrame:
+    """Pripne besedilne labele odgovorov za Q3B_2 in Q3C_2."""
     label_lookup = labels.set_index("recnum")[["Q3B_2", "Q3C_2"]].rename(
         columns={
             "Q3B_2": "analiza_label_q3b2",
             "Q3C_2": "analiza_label_q3c2",
         }
     )
-    survey = survey.merge(label_lookup, on="recnum", how="left")
+    return survey.merge(label_lookup, on="recnum", how="left")
 
+
+def add_view_numbers(survey: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Oštevilči zaporedne oglede vsakega udeleženca (1, 2, 3, ...).
+
+    To je časovna spremenljivka za mešane modele. Vrne dopolnjeno tabelo in
+    ločeno tabelo samo veljavnih enot.
+    """
     valid_resolved = survey[survey["analiza_valid_resolved"]].copy()
     valid_resolved = valid_resolved.sort_values(
         ["analiza_resolved_code", "analiza_itime_date", "recnum"]
@@ -963,7 +644,15 @@ def main() -> None:
         on="recnum",
         how="left",
     )
+    return survey, valid_resolved
 
+
+def add_mental_model_scores(survey: pd.DataFrame, valid_mask: pd.Series) -> list[str]:
+    """Oceni 11 nalog mentalnega modela (Q3A, Q3B, Q3C) z 0 ali 1.
+
+    Vrne seznam stolpcev s posameznimi ocenami. Skupni rezultat je zapisan v
+    analiza_mm_total_correct_count (0-11) in analiza_mm_total_correct_share (0-1).
+    """
     expected_q3c3 = {
         "Q3C_3a": 2,
         "Q3C_3b": 3,
@@ -974,7 +663,6 @@ def main() -> None:
         "Q3C_3g": 6,
     }
 
-    valid_mask = survey["analiza_valid_resolved"]
     survey["analiza_mm_q3a_correct"] = pd.NA
     survey.loc[valid_mask, "analiza_mm_q3a_correct"] = survey.loc[valid_mask].apply(
         lambda row: score_q3a(row["Q3A"], row["analiza_cv_name"]),
@@ -1027,7 +715,18 @@ def main() -> None:
     survey.loc[valid_mask, "analiza_mm_total_correct_share"] = (
         survey.loc[valid_mask, "analiza_mm_total_correct_count"] / len(mental_model_columns)
     )
+    return mental_model_columns
 
+
+def add_trust_scales(
+    survey: pd.DataFrame, valid_mask: pd.Series
+) -> tuple[pd.Series, pd.Series]:
+    """Izračuna zaupanje (Q4A, lestvica 1-7) in nezaupanje (Q4B, lestvica 1-5).
+
+    Del enot je izpolnil starejšo različico lestvice, ki je ni mogoče primerjati
+    z novo; te enote so označene z analiza_trust_version = "old" in izločene.
+    Vrne masko starih in masko novih enot.
+    """
     trust_source_columns = ["Q4Aa", "Q4Ab", "Q4Ac", "Q4Ad", "Q4Ae", "Q4Af", "Q4Ag"]
     distrust_source_columns = ["Q4Ba", "Q4Bb", "Q4Bc", "Q4Bd", "Q4Be"]
     # Q4Ba-Q4Be so merjeni na 5-stopenjski lestvici (1-5), kar potrjuje sumarnik 1KA.
@@ -1088,10 +787,17 @@ def main() -> None:
         [distrust_on_1_7, trust_on_1_7], axis=1
     ).mean(axis=1)
 
-    # Q2a-Q2h (zadovoljstvo z razlago, Hoffman ESS) je merjen na lestvici 1-7,
-    # Q3a-Q3g (izvedljivost) pa na lestvici 1-5. Sumarnik 1KA to potrjuje.
-    # Gre za dva locena konstrukta na razlicnih lestvicah, zato ju ni dovoljeno
-    # povpreciti skupaj.
+    return trust_old_mask, trust_new_mask
+
+
+def add_explanation_scales(survey: pd.DataFrame, valid_mask: pd.Series) -> None:
+    """Izračuna zadovoljstvo z razlago in izvedljivost.
+
+    Q2a-Q2h (zadovoljstvo z razlago, Hoffman ESS) je merjen na lestvici 1-7,
+    Q3a-Q3g (izvedljivost) pa na lestvici 1-5. Sumarnik 1KA to potrjuje.
+    Gre za dva locena konstrukta na razlicnih lestvicah, zato ju ni dovoljeno
+    povpreciti skupaj.
+    """
     satisfaction_source_columns = ["Q2a", "Q2b", "Q2c", "Q2d", "Q2e", "Q2f", "Q2g", "Q2h"]
     actionability_source_columns = ["Q3a", "Q3b", "Q3c", "Q3d", "Q3e", "Q3f", "Q3g"]
 
@@ -1117,6 +823,13 @@ def main() -> None:
         valid_mask, actionability_clean_columns
     ].apply(pd.to_numeric, errors="coerce").mean(axis=1)
 
+
+def build_participant_tables(
+    valid_resolved: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Sestavi pregledne tabele po udeležencih: število sodelovanj, razpored
+    po tednih in kateri življenjepis je bil viden ob katerem ogledu.
+    """
     participant_counts = (
         valid_resolved.groupby("analiza_resolved_code")
         .agg(
@@ -1170,8 +883,21 @@ def main() -> None:
     participant_summary = participant_summary.merge(
         participant_view_dates, on="analiza_resolved_code", how="left"
     )
+    return participant_counts, participant_summary, participant_week_matrix
 
-    summary = {
+
+def build_summary(
+    survey: pd.DataFrame,
+    valid_resolved: pd.DataFrame,
+    valid_mask: pd.Series,
+    mental_model_columns: list[str],
+    trust_old_mask: pd.Series,
+    trust_new_mask: pd.Series,
+) -> dict:
+    """Sestavi kontrolni povzetek: koliko enot je veljavnih, kako so bile kode
+    razrešene in koliko enot pokriva vsaka lestvica.
+    """
+    return {
         "valid_rows_status6_no_test": int(survey["analiza_valid_status6_no_test"].sum()),
         "valid_rows_with_resolved_code": int(survey["analiza_valid_resolved"].sum()),
         "unique_participants_resolved": int(valid_resolved["analiza_resolved_code"].nunique()),
@@ -1212,7 +938,10 @@ def main() -> None:
         },
     }
 
-    metrics = pd.DataFrame(
+
+def build_metrics_table(survey: pd.DataFrame, summary: dict) -> pd.DataFrame:
+    """Iz povzetka sestavi ploščato tabelo ključnih številk za poročanje."""
+    return pd.DataFrame(
         [
             ("veljavni_status6_brez_test", summary["valid_rows_status6_no_test"]),
             ("veljavni_z_razreseno_kodo", summary["valid_rows_with_resolved_code"]),
@@ -1241,6 +970,20 @@ def main() -> None:
         columns=["metric", "value"],
     )
 
+
+def write_outputs(
+    survey: pd.DataFrame,
+    participant_counts: pd.DataFrame,
+    participant_summary: pd.DataFrame,
+    participant_week_matrix: pd.DataFrame,
+    metrics: pd.DataFrame,
+    summary: dict,
+) -> None:
+    """Zapiše vse izhodne datoteke.
+
+    Obstoječih datotek ne prepisuje: next_available_path vsakemu zagonu dodeli
+    novo različico (_v2, _v3, ...), da je zgodovina analize ohranjena.
+    """
     analysis_dataset_path = next_available_path(OUTPUT_DIR / "anketa191776-2026-05-11_dataset_analiza.csv")
     participant_counts_path = next_available_path(OUTPUT_DIR / "participant_counts.csv")
     participant_summary_path = next_available_path(OUTPUT_DIR / "participant_summary.csv")
@@ -1283,6 +1026,48 @@ def main() -> None:
     (OUTPUT_DIR / "mental_model_pravila_draft.md").write_text(
         build_mental_model_draft(),
         encoding="utf-8",
+    )
+
+
+def main() -> None:
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    survey, labels = load_inputs()
+    official_codes = load_official_codes()
+
+    # 1. Kdo je odgovarjal in katera enota je veljavna.
+    add_participant_identification(survey, labels, official_codes)
+    add_candidate_metadata(survey, official_codes)
+    survey = attach_answer_labels(survey, labels)
+    survey, valid_resolved = add_view_numbers(survey)
+
+    valid_mask = survey["analiza_valid_resolved"]
+
+    # 2. Merjene dimenzije.
+    mental_model_columns = add_mental_model_scores(survey, valid_mask)
+    trust_old_mask, trust_new_mask = add_trust_scales(survey, valid_mask)
+    add_explanation_scales(survey, valid_mask)
+
+    # 3. Izvedene tabele in izvoz.
+    participant_counts, participant_summary, participant_week_matrix = build_participant_tables(
+        valid_resolved
+    )
+    summary = build_summary(
+        survey,
+        valid_resolved,
+        valid_mask,
+        mental_model_columns,
+        trust_old_mask,
+        trust_new_mask,
+    )
+    metrics = build_metrics_table(survey, summary)
+    write_outputs(
+        survey,
+        participant_counts,
+        participant_summary,
+        participant_week_matrix,
+        metrics,
+        summary,
     )
 
     print(json.dumps(summary, ensure_ascii=False, indent=2))
