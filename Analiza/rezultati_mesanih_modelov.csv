@@ -1,16 +1,20 @@
 ﻿dimenzija,ucinek,b,SE,p,znacilno
-Zaupanje,cas (na ogled),0.111,0.057,0.05,mejno
-Zaupanje,pozitivni bias,0.337,0.181,0.063,mejno
-Zaupanje,negativni bias,-0.336,0.173,0.052,mejno
-Nezaupanje,cas (na ogled),-0.022,0.039,0.564,ne
-Nezaupanje,pozitivni bias,0.003,0.124,0.98,ne
-Nezaupanje,negativni bias,0.021,0.119,0.861,ne
-Zadovoljstvo z razlago,cas (na ogled),-0.025,0.042,0.55,ne
-Zadovoljstvo z razlago,pozitivni bias,0.361,0.143,0.012,da
-Zadovoljstvo z razlago,negativni bias,-0.295,0.138,0.033,da
-Izvedljivost,cas (na ogled),-0.021,0.026,0.425,ne
-Izvedljivost,pozitivni bias,0.102,0.09,0.26,ne
-Izvedljivost,negativni bias,-0.274,0.087,0.002,da
-Mentalni model,cas (na ogled),0.01,0.007,0.161,ne
-Mentalni model,pozitivni bias,0.018,0.025,0.474,ne
-Mentalni model,negativni bias,-0.005,0.024,0.839,ne
+Zaupanje,analiza_view_number,0.103,0.071,0.144,ne
+Zaupanje,Biased,-0.077,0.345,0.823,ne
+Zaupanje,analiza_view_number:Biased,0.023,0.123,0.853,ne
+Nezaupanje,analiza_view_number,-0.009,0.047,0.843,ne
+Nezaupanje,Biased,0.114,0.228,0.617,ne
+Nezaupanje,analiza_view_number:Biased,-0.04,0.082,0.625,ne
+Zadovoljstvo z razlago,analiza_view_number,0.023,0.053,0.665,ne
+Zadovoljstvo z razlago,Biased,0.379,0.257,0.14,ne
+Zadovoljstvo z razlago,analiza_view_number:Biased,-0.15,0.096,0.119,ne
+Mentalni model,analiza_view_number,0.014,0.009,0.107,ne
+Mentalni model,Biased,0.037,0.042,0.381,ne
+Mentalni model,analiza_view_number:Biased,-0.013,0.016,0.413,ne
+Zaupanje + MM,analiza_view_number,-0.049,0.184,0.79,ne
+Zaupanje + MM,Biased,-0.627,0.958,0.513,ne
+Zaupanje + MM,analiza_view_number:Biased,0.286,0.345,0.407,ne
+Zaupanje + MM,analiza_mm_total_correct_share,-2.102,1.237,0.089,mejno
+Zaupanje + MM,analiza_view_number:analiza_mm_total_correct_share,0.41,0.423,0.333,ne
+Zaupanje + MM,Biased:analiza_mm_total_correct_share,1.482,2.169,0.494,ne
+Zaupanje + MM,analiza_view_number:Biased:analiza_mm_total_correct_share,-0.696,0.783,0.374,ne
