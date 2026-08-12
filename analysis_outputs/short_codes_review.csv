@@ -1,0 +1,26 @@
+﻿recnum,itime,Q1,analiza_q1_code_len,analiza_code_category,Q7,analiza_code_resolution,analiza_resolved_official_code,analiza_invalid_reason
+15,04.03.2026,1889,4.0,4-mestna,Enver Bajrami,unique_prefix_4,18896746,koda_dolzina_4
+18,04.03.2026,1966,4.0,4-mestna,Marko_Prevc,unique_prefix_4,19664925,koda_dolzina_4
+19,04.03.2026,1222,4.0,4-mestna,Amira,cv_disambiguated_prefix_4,12229136,koda_dolzina_4
+44,04.03.2026,1852116,7.0,7-mestna,Maja Nikolic,unique_prefix_7,18521166,koda_dolzina_7
+65,09.03.2026,2853981,7.0,7-mestna,Amira Basic,unique_prefix_7,28539815,koda_dolzina_7
+94,11.03.2026,1649857,7.0,7-mestna,Enver Bjarami,unique_prefix_7,16498579,koda_dolzina_7
+97,11.03.2026,1854110,7.0,7-mestna,Amira,unique_prefix_7,18541107,koda_dolzina_7
+119,11.03.2026,1510769,7.0,7-mestna,Maja Nikolic,unique_prefix_7,15107694,koda_dolzina_7
+136,12.03.2026,2313692,7.0,7-mestna,Maja,unique_prefix_7,23136923,koda_dolzina_7
+148,16.03.2026,2177386,7.0,7-mestna,Ziva_Kopitar,unique_prefix_7,21773865,koda_dolzina_7
+154,16.03.2026,2853981,7.0,7-mestna,Enver Bajrami,unique_prefix_7,28539815,koda_dolzina_7
+169,17.03.2026,2122322,7.0,7-mestna,Maja Nikolic,unique_prefix_7,21223228,koda_dolzina_7
+175,17.03.2026,2138846,7.0,7-mestna,Amira Basic,unique_prefix_7,21388468,koda_dolzina_7
+185,17.03.2026,2969013,7.0,7-mestna,26900784,unique_prefix_7,29690139,koda_dolzina_7
+194,18.03.2026,1232880,7.0,7-mestna,Maja Nikolić,unique_prefix_7,12328804,koda_dolzina_7
+230,23.03.2026,2853981,7.0,7-mestna,Maja Nikolic,unique_prefix_7,28539815,koda_dolzina_7
+231,23.03.2026,2399264,7.0,7-mestna,Janez Novak,unique_prefix_7,23992644,koda_dolzina_7
+245,25.03.2026,2584218,7.0,7-mestna,Živa Kopitar,unique_prefix_7,25842189,koda_dolzina_7
+249,25.03.2026,2122322,7.0,7-mestna,Maja Nikolic,unique_prefix_7,21223228,koda_dolzina_7
+258,25.03.2026,1232880,7.0,7-mestna,Marko Prevc,unique_prefix_7,12328804,koda_dolzina_7
+264,26.03.2026,2664955,7.0,7-mestna,ziva,unique_prefix_7,26649557,koda_dolzina_7
+295,30.03.2026,2853981,7.0,7-mestna,Janez,unique_prefix_7,28539815,koda_dolzina_7
+307,31.03.2026,2969013,7.0,7-mestna,Amira,unique_prefix_7,29690139,koda_dolzina_7
+323,31.03.2026,2177386,7.0,7-mestna,Maja Nikolic,unique_prefix_7,21773865,koda_dolzina_7
+364,09.04.2026,1134476,7.0,7-mestna,Živa Kopitar,unique_prefix_7,11344762,koda_dolzina_7

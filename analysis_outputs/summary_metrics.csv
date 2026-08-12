@@ -1,0 +1,12 @@
+﻿metric,value
+skupno_vrstic_brez_opisne_vrstice,475
+status_6_skupaj,268
+test_vrstice_skupaj,2
+veljavni_odgovori_osnovno_status6_brez_test,267
+veljavni_odgovori_z_uradno_ali_razreseno_kodo,266
+unikatni_veljavni_udelezenci_po_uradni_8_mestni_kodi,82
+unikatne_pravilno_vnesene_8_mestne_uradne_kode,79
+4_mestne_kode_med_veljavnimi,3
+5_mestne_kode_med_veljavnimi,0
+7_mestne_kode_med_veljavnimi,22
+sumljive_8_mestne_kode_izven_uradnega_seznama,1

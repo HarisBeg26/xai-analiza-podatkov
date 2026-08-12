@@ -1,0 +1,80 @@
+{
+  "metrics": {
+    "skupno_vrstic_brez_opisne_vrstice": 475,
+    "status_6_skupaj": 268,
+    "test_vrstice_skupaj": 2,
+    "veljavni_odgovori_osnovno_status6_brez_test": 267,
+    "veljavni_odgovori_z_uradno_ali_razreseno_kodo": 266,
+    "unikatni_veljavni_udelezenci_po_uradni_8_mestni_kodi": 82,
+    "unikatne_pravilno_vnesene_8_mestne_uradne_kode": 79,
+    "4_mestne_kode_med_veljavnimi": 3,
+    "5_mestne_kode_med_veljavnimi": 0,
+    "7_mestne_kode_med_veljavnimi": 22,
+    "sumljive_8_mestne_kode_izven_uradnega_seznama": 1
+  },
+  "code_resolution_counts_valid_loose": {
+    "exact_official_8": 241,
+    "unique_prefix_7": 22,
+    "unique_prefix_4": 2,
+    "cv_disambiguated_prefix_4": 1,
+    "exact_8_not_in_official": 1
+  },
+  "weekly_distribution": [
+    {
+      "iso_year": 2026,
+      "iso_week": 10,
+      "valid_rows": 29,
+      "unique_participants": 29,
+      "date_min": "2026-03-04",
+      "date_max": "2026-03-04"
+    },
+    {
+      "iso_year": 2026,
+      "iso_week": 11,
+      "valid_rows": 60,
+      "unique_participants": 57,
+      "date_min": "2026-03-09",
+      "date_max": "2026-03-12"
+    },
+    {
+      "iso_year": 2026,
+      "iso_week": 12,
+      "valid_rows": 59,
+      "unique_participants": 58,
+      "date_min": "2026-03-16",
+      "date_max": "2026-03-18"
+    },
+    {
+      "iso_year": 2026,
+      "iso_week": 13,
+      "valid_rows": 47,
+      "unique_participants": 47,
+      "date_min": "2026-03-23",
+      "date_max": "2026-03-26"
+    },
+    {
+      "iso_year": 2026,
+      "iso_week": 14,
+      "valid_rows": 60,
+      "unique_participants": 60,
+      "date_min": "2026-03-30",
+      "date_max": "2026-04-02"
+    },
+    {
+      "iso_year": 2026,
+      "iso_week": 15,
+      "valid_rows": 11,
+      "unique_participants": 11,
+      "date_min": "2026-04-09",
+      "date_max": "2026-04-09"
+    }
+  ],
+  "participant_response_count_distribution": {
+    "1": 10,
+    "2": 10,
+    "3": 24,
+    "4": 28,
+    "5": 8,
+    "6": 2
+  }
+}

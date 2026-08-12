@@ -1,0 +1,75 @@
+# Osnutek Pravil Za Mentalne Modele
+
+
+Q3B_2 - Razumevanje: Mentalni modeli - Zaznavanje napak
+
+Pravilen odgovor bi bilo ali: 
+- Delno smiselna, 
+- Ne, ne zdi se smiselna
+
+Predlog za ročno potrditev pravil:
+
+## Janez Novak
+- Kandidat: primeren
+- Biased: 0
+- Tip biasa: brez_biasa
+Q3A- Sistem je na podlagi življenjepisa izluščil vse pomembne podatke kot so oddaljenost od lokacije delovnega mesta, digitalne kompetence, status zaposlitve, certifikate, stopnje izobrazbe, delovne izkušnje, zgodovina dela na projektih.
+Q3B_3- Ni napačnih razlag, sistem je pravilno odločil da je kandidat primeren
+
+## Enver Bajrami
+- Kandidat: primeren
+- Biased: 0
+- Tip biasa: brez_biasa
+Q3A- Sistem je na podlagi življenjepisa izluščil vse pomembne podatke kot so oddaljenost od lokacije delovnega mesta, digitalne kompetence, status zaposlitve, certifikate, stopnje izobrazbe, delovne izkušnje, zgodovina dela na projektih.
+Q3B_3- Ni napačnih razlag, sistem je pravilno odločil da je kandidat primeren
+
+## Živa Kopitar
+- Kandidat: primeren
+- Biased: 1
+- Tip biasa: pozitivni_bias_nacionalnost
+Q3A- Sistem je na podlagi življenjepisa izluščil vse pomembne podatke kot so oddaljenost od lokacije delovnega mesta, digitalne kompetence, status zaposlitve, certifikate, stopnje izobrazbe, delovne izkušnje, zgodovina dela na projektih.
+Q3B_3- Ni napačnih razlag, ampak je čudno da je sistem se odločil za narodnost kot pomemben faktor odločanja.
+
+## Maja Nikolič
+- Kandidat: neprimeren
+- Biased: 0
+- Tip biasa: brez_biasa
+Q3A- Sistem je na podlagi življenjepisa izluščil vse pomembne podatke kot so oddaljenost od lokacije delovnega mesta, jezikovne kompetence, digitalne kompetence, status zaposlitve, certifikate, stopnje izobrazbe, delovne izkušnje, zgodovina dela na projektih.
+Q3B_3- Ni napačnih razlag, sistem je pravilno kandidatko klasificiral kot neprimerno za delovno mesto
+
+## Marko Prevc
+- Kandidat: neprimeren
+- Biased: 0
+- Tip biasa: brez_biasa
+Q3A- Sistem je na podlagi življenjepisa izluščil vse pomembne podatke kot so oddaljenost od lokacije delovnega mesta, jezikovne kompetence, digitalne kompetence, status zaposlitve, certifikate, stopnje izobrazbe, delovne izkušnje, zgodovina dela na projektih.
+Q3B_3- Ni napačnih razlag, sistem je pravilno kandidata klasificiral kot neprimernega za delovno mesto
+
+## Amira Bašić
+- Kandidat: neprimeren
+- Biased: 1
+- Tip biasa: negativni_bias_nacionalnost
+Q3A- Sistem je na podlagi življenjepisa izluščil vse pomembne podatke kot so oddaljenost od lokacije delovnega mesta, jezikovne kompetence, digitalne kompetence, status zaposlitve, certifikate, stopnje izobrazbe, delovne izkušnje, zgodovina dela na projektih.
+Q3B_3- Napaka je da se je sistem na podlagi podatkih o spolu in narodnosti kandidatke odločil da je neprimerna za delovno mesto.
+
+Q3C - Naloga C: Napovedno sklepanje
+Spodaj je opisan hipotetičen življenjepis kandidata. Na podlagi vaših dosedanjih izkušenj z opazovanim AI sistemom za izbiro kandidata za opravljanje študentskega dela, poskusite napovedati, kako bi ga sistem ocenil.
+
+Profil: 
+- Zaključena srednja šola (brez visokošolske izobrazbe),
+- 2 leti delovnih izkušenj v popolnoma drugem sektorju, 
+- Znanje angleškega jezika (B1),
+- Brez navedenih digitalnih kompetenc, 
+- Lepo oblikovan življenjepis z jasno strukturo.
+Kakšno oceno bi AI sistem po vašem mnenju dal temu profilu?
+Pravilni odgovori bi bili:
+- Rahlo negativna ocena,
+- Visoka negativna ocena
+
+Q3C_3: Razvrstite spodnje dejavnike od najpomembnejšega (1) do najmanj pomembnega (7) za odločitev opazovanega AI sistema za izbiro kandidata za opravljanje študentskega dela pri zgornjem profilu.
+1. Digitalne kompetence
+2. Stopnja izobrazbe
+3. Delovne izkušnje
+4. Jezikovne kompetence
+5. Lokacija
+6. Nacionalnost
+7. Spol

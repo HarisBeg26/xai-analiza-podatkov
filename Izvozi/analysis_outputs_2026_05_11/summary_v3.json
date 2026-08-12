@@ -1,0 +1,53 @@
+{
+  "valid_rows_status6_no_test": 268,
+  "valid_rows_with_resolved_code": 267,
+  "unique_participants_resolved": 82,
+  "resolution_counts": {
+    "exact_official_8": 242,
+    "unique_prefix_7": 22,
+    "unique_prefix_4": 2,
+    "cv_disambiguated_prefix_4": 1,
+    "exact_8_not_in_official": 1
+  },
+  "participation_distribution": {
+    "1": 10,
+    "2": 10,
+    "3": 23,
+    "4": 29,
+    "5": 8,
+    "6": 2
+  },
+  "unresolved_valid_rows": [
+    {
+      "recnum": "57",
+      "itime": "08.03.2026",
+      "Q1": "11111111",
+      "Q7": "dbdfbd",
+      "analiza_code_resolution": "exact_8_not_in_official"
+    }
+  ],
+  "mental_model_item_means": {
+    "analiza_mm_q3a_correct": 0.1760299625468165,
+    "analiza_mm_q3b2_correct": 0.8801498127340824,
+    "analiza_mm_q3b3_correct": 0.30337078651685395,
+    "analiza_mm_q3c2_correct": 0.20224719101123595,
+    "analiza_mm_q3c_3a_correct": 0.299625468164794,
+    "analiza_mm_q3c_3b_correct": 0.10112359550561797,
+    "analiza_mm_q3c_3c_correct": 0.45692883895131087,
+    "analiza_mm_q3c_3d_correct": 0.08614232209737828,
+    "analiza_mm_q3c_3e_correct": 0.550561797752809,
+    "analiza_mm_q3c_3f_correct": 0.5543071161048689,
+    "analiza_mm_q3c_3g_correct": 0.4868913857677903
+  },
+  "trust_scale_coverage": {
+    "nezaupanje_mean_non_null": 242,
+    "zaupanje_mean_non_null": 358
+  },
+  "output_files": {
+    "dataset_csv": "C:\\Users\\vunja\\Desktop\\XAI-Master projekt\\Analiza-Podatkov\\Izvozi\\analysis_outputs_2026_05_11\\anketa191776-2026-05-11_dataset_analiza_v3.csv",
+    "participant_counts_csv": "C:\\Users\\vunja\\Desktop\\XAI-Master projekt\\Analiza-Podatkov\\Izvozi\\analysis_outputs_2026_05_11\\participant_counts_v3.csv",
+    "participant_summary_csv": "C:\\Users\\vunja\\Desktop\\XAI-Master projekt\\Analiza-Podatkov\\Izvozi\\analysis_outputs_2026_05_11\\participant_summary_v3.csv",
+    "participant_week_matrix_csv": "C:\\Users\\vunja\\Desktop\\XAI-Master projekt\\Analiza-Podatkov\\Izvozi\\analysis_outputs_2026_05_11\\participant_week_matrix_v3.csv",
+    "summary_metrics_csv": "C:\\Users\\vunja\\Desktop\\XAI-Master projekt\\Analiza-Podatkov\\Izvozi\\analysis_outputs_2026_05_11\\summary_metrics_v3.csv"
+  }
+}

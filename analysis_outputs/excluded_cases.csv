@@ -1,0 +1,234 @@
+﻿recnum,status,itime,Q1,Q7,Q3A,analiza_excluded_is_test,analiza_excluded_status_lt_6,analiza_excluded_not_8_digit,analiza_excluded_reasons,analiza_code_category,analiza_code_resolution,analiza_invalid_reason
+1,4,23.02.2026,-4,-3,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+2,3,24.02.2026,-4,-3,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+3,4,27.02.2026,-4,-3,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+4,3,27.02.2026,-4,-3,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+5,4,27.02.2026,-4,-3,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+6,3,01.03.2026,-4,-3,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+7,4,02.03.2026,-4,-3,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+8,6,02.03.2026,-4,-4,test,True,False,True,test; ni_8_mestna_koda,ni numerična,invalid_format,vsebina_vsebuje_test; koda_ni_numericna
+9,4,02.03.2026,-4,-3,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+10,3,02.03.2026,-4,-3,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+11,5,03.03.2026,-4,-3,test,True,True,True,test; status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; vsebina_vsebuje_test; koda_ni_numericna
+12,4,03.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+13,3,03.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+14,3,03.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+15,6,04.03.2026,1889,Enver Bajrami,"Sistem je preveril ključne besede, ki so povezane z delovnim mestom, ter jih primerjal z življenjepisom. Upošteval je delovne naloge, rezultate in orodja/tehnologije, ki jih kandidat omenja. To je pomembno, ker hitro pokaže, ali kandidat ustreza profilu.",False,False,True,ni_8_mestna_koda,4-mestna,unique_prefix_4,koda_dolzina_4
+17,3,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+18,6,04.03.2026,1966,Marko_Prevc,"Upošteval je naslednje informacije: Izkušnje, Certifikati, Izobrazba, Osnovno znanje. Glede na vrednosti teh informacij je potem določil oceno za vsako informacijo in izračunal skupno oceno.",False,False,True,ni_8_mestna_koda,4-mestna,unique_prefix_4,koda_dolzina_4
+19,6,04.03.2026,1222,Amira,"AI sistem je življenjepis ocenil tako, da je začel z osnovno vrednostjo in nato prišteval ali odšteval točke glede na posamezne podatke iz CV-ja. Upošteval je delovne izkušnje, izobrazbo, lokacijo, komunikacijske veščine, spol in državljanstvo.  Izkušnje, magistrska diploma in lokacija so oceno zvišale, medtem ko so jo ženski spol, tuje državljanstvo in slabše komunikacijske veščine znižali. Največjo težo so imele delovne izkušnje, kar kaže, da sistem daje največji pomen strokovni usposobljenosti.",False,False,True,ni_8_mestna_koda,4-mestna,cv_disambiguated_prefix_4,koda_dolzina_4
+26,4,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+32,4,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+38,3,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+39,3,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+44,6,04.03.2026,1852116,Maja Nikolic,"Dobro, upošteval bi vse informacije, pomembne so za dobro izbiro kandidata",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+45,4,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+46,4,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+47,3,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+50,4,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+51,3,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+54,4,04.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+55,3,08.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+56,3,08.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+65,6,09.03.2026,2853981,Amira Basic,"AI je dobro ocenil osebu. Uposteval je informacije ki se odnose na IT sektor, ampak mislim da ni v redu da toliko uporabljajo informacije o narodosti, kjer to ima veliki vpliv na samu ocenu kandidata.",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+72,3,09.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+75,3,09.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+76,4,09.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+77,3,09.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+81,4,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+85,5,11.03.2026,18896746,-3,-3,False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+86,5,11.03.2026,15107694,-3,-3,False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+87,4,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+88,4,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+89,3,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+91,4,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+92,3,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+93,3,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+94,6,11.03.2026,1649857,Enver Bjarami,dobro,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+95,3,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+96,3,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+97,6,11.03.2026,1854110,Amira,Ocenil je kot da ni primeren kandidat za izbiro.,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+111,4,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+112,3,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+117,3,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+118,4,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+119,6,11.03.2026,1510769,Maja Nikolic,Je uposteval pomembne podatke kot so izobrazba pa tudi izkusnje. Kjer moje mnenje je da je to dosta pomembno.,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+125,3,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+126,4,11.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+129,4,12.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+135,4,12.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+136,6,12.03.2026,2313692,Maja,"Menim da je  napačno da se kandidat ki ima dosti velike tehnične izkušnje da se zavrne, in tudi ki pozna dobro angleško. Po moje so trebali te informaicije biti presodni, tudi dejstvo da ima več diplome",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+141,3,12.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+142,4,12.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+143,3,12.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+144,3,12.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+145,3,12.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+148,6,16.03.2026,2177386,Ziva_Kopitar,/,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+149,5,16.03.2026,29087717,-3,-3,False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+151,3,16.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+154,6,16.03.2026,2853981,Enver Bajrami,"Dobro je opazoval vse, dosti boljse od presnjega puta",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+156,4,16.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+169,6,17.03.2026,2122322,Maja Nikolic,"Mi je bilo jasno katere parametre je uporabio za odlocitvo. Nekatere so bile popolnoma jasne kot je nivo Angleščine, ampak mi ni bilo jasno zakaj lokacija od kod je kandidat vpliva na odločitev za delovno mesto, morda je negde v oglasu za delo to vstavljeno ampak ja ne vidim pomembnost tega za dobijanje delovne pozicije. Izobrazba in izkusnja su vedno pomembne in mislim da su bolj pomembne kot posebni certifikati da bi odyemali vec poenov od tega koliko izkusnja prinasa (edino ako postoje razlicne tocke in parametri za razlicno stevilo leta izkušnje)",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+170,4,17.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+175,6,17.03.2026,2138846,Amira Basic,"Se mi zdi, da je razlago zelo dobro opisal in da ima smisel. Vidim mogoče da bi lahko ta razlaga bila boljše napisana, je pa za enkrat vredu. Me zanima edino kak bi sistem delo na drugačnih formah CV-jev. Ni mi najbolj jasen del z nacionalnostjo tho.",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+181,4,17.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+183,3,17.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+184,5,17.03.2026,29318759,-3,-3,False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+185,6,17.03.2026,2969013,26900784,je uposteval ali smo prej imale nekatero izkusnje ali smo smo na dodiplomski studiji ali na magisterji stufiji,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+187,3,17.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+188,5,17.03.2026,27170007,-3,-3,False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+189,4,17.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+190,4,17.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+194,6,18.03.2026,1232880,Maja Nikolić,"Spet problem, da je ženski spol slabost.",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+195,5,18.03.2026,18896746,-3,-3,False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+199,5,18.03.2026,12229136,-3,-3,False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+202,4,18.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+208,3,18.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+211,3,18.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+217,3,18.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+218,3,18.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+221,3,18.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+223,3,18.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+230,6,23.03.2026,2853981,Maja Nikolic,"Zelo dobro je ocenil opazovan zvljenjepis, nimam zamerke",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+231,6,23.03.2026,2399264,Janez Novak,"najbolj pomembne so bile izkušnje, trajanje izkušenj in izobrazba, kar so po mojem mnenju najbolj pomembne in smiselne, saj z njimi dobivaš znanja, kar je ključno za dobre kandidate.",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+239,3,23.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+240,3,23.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+241,3,23.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+243,3,23.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+245,6,25.03.2026,2584218,Živa Kopitar,Super. Upošteval je razdaljo osebe od lokacije dela.,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+249,6,25.03.2026,2122322,Maja Nikolic,Mislim da so izobrazevanje in nivo jezika pomembni ampak mislim da lokacija ni zelo pomembna ker mi morda oseba rada spremenila lokacijo zivljenja.,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+252,3,25.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+253,4,25.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+258,6,25.03.2026,1232880,Marko Prevc,Ženski spol ni nujno slabost.,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+263,5,25.03.2026,12345678,-3,xd,False,True,False,status_manjsi_od_6,8-mestna,exact_8_not_in_official,status_ni_6; 8_mestna_koda_ni_na_uradnem_seznamu
+264,6,26.03.2026,2664955,ziva,"najvec je uopsteval informacije katere so najbolj pomembne, kot so izobrazenje, mesto zivljenja poznavanje jezika in ostalo",False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+268,4,26.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+269,3,26.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+270,3,26.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+281,3,26.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+282,3,26.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+283,3,26.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+284,3,26.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+286,4,30.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+295,6,30.03.2026,2853981,Janez,Vse je bilo v redu nikaj ne manjka najboljsi model do sedaj,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+303,4,31.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+308,5,31.03.2026,25842189,-3,-3,False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+307,6,31.03.2026,2969013,Amira,AI je ocenjil vse pomembme stvari kot so podrocje njihovoh znanje in vse lastnosti kaj potrepuje en kandidat za delo v neko podjetje,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+313,3,31.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+315,3,31.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+322,3,31.03.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+323,6,31.03.2026,2177386,Maja Nikolic,Razlaga je bila dovolj jasna in podrobna.,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+331,5,01.04.2026,19455781,-3,-3,False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+332,3,01.04.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+333,3,01.04.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+334,3,01.04.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+335,3,01.04.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+345,3,01.04.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+346,3,01.04.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+359,4,02.04.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+360,3,02.04.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+361,3,02.04.2026,-5,-5,-5,False,True,True,status_manjsi_od_6; ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+364,6,09.04.2026,1134476,Živa Kopitar,Delovne izkušnje se mi zdijo pomembne,False,False,True,ni_8_mestna_koda,7-mestna,unique_prefix_7,koda_dolzina_7
+373,5,10.04.2026,12227945,-3,"Oseba ni imela izkusenj v IT saj je bil natakar, to je najbolj vplivalo na njegovo oceno. Poleg tega so na njegovo oceno vplivali tudi certifikat katerega ni imel.",False,True,False,status_manjsi_od_6,8-mestna,exact_official_8,status_ni_6
+,,,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,1889,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,18243213,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,-5,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,1966,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,1222,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,17037546,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,16379487,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,13401501,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,15107694,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,19455781,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,18541107,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,19284120,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,12328804,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,17730144,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,12730894,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,16770219,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,19263467,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,19780365,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,17038624,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,12227945,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,11357063,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,15550634,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,19958410,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,16498579,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,14392404,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,1852116,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,14819076,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,13507809,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,15510610,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,13147039,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,11111111,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21426166,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21586706,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,28229312,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,24139998,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,29912466,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,22172632,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21302126,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,2853981,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,23318870,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,28822395,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,28354558,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,27634429,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,22579910,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,25800598,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,23992644,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,22339164,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,26191527,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21773865,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,26649557,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,27320828,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,18896746,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,1649857,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,1854110,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,18521166,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,19664925,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,12229136,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,1510769,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,29369619,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,27720924,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,23647141,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,29318759,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21225271,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,27637594,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,2313692,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,25942107,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21272703,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,25689673,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,25849874,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,2177386,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,29087717,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,23136923,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,27036624,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,2122322,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,22860963,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,27170007,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,25842189,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,2138846,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,28627449,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,26234399,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,29408998,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21653107,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,2969013,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,22420408,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,27912107,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,26540316,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,1232880,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,2399264,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,2584218,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,12345678,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,2664955,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,26900784,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,22876846,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21896977,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21388468,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,25355204,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,22124179,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,21223228,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,27103639,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna
+,,1134476,,,,False,False,True,ni_8_mestna_koda,ni numerična,invalid_format,status_ni_6; koda_ni_numericna

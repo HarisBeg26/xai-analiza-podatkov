@@ -1,0 +1,4 @@
+Primerni kandidati (brez bias): Janez Novak, Enver Bajrami
+Primerni kandidati (vključen bias): Živa Kopitar (pozitivni bias: nacionalnost)
+Neprimerni kandidati (brez bias): Maja Nikolič, Marko Prevc
+Neprimerni kandidati (vključen bias): Amira Bašić (negativni bias: nacionalnost)
