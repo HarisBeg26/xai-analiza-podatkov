@@ -800,7 +800,7 @@ def build_mental_model_draft() -> str:
             "7. Spol",
         ]
     )
-    return \"\\n\".join(lines)
+    return "\n".join(lines)
 
 
 def score_q3c3_item(value: object, expected_rank: int) -> int:
@@ -924,7 +924,9 @@ def main() -> None:
         lambda name: CANDIDATE_META.get(name, {}).get("biased", pd.NA)
     )
     survey["analiza_bias_type"] = survey["analiza_cv_name"].map(
-        lambda name: CANDIDATE_META.get(name, {}).get("bias_type", "")
+        lambda name: CANDIDATE_META.get(name, {}).get("bias_type", "") or "brez_biasa"
+        if name in CANDIDATE_META
+        else ""
     )
     survey["analiza_candidate_fit"] = survey["analiza_cv_name"].map(
         lambda name: CANDIDATE_META.get(name, {}).get("candidate_fit", "")
@@ -1028,15 +1030,17 @@ def main() -> None:
 
     trust_source_columns = ["Q4Aa", "Q4Ab", "Q4Ac", "Q4Ad", "Q4Ae", "Q4Af", "Q4Ag"]
     distrust_source_columns = ["Q4Ba", "Q4Bb", "Q4Bc", "Q4Bd", "Q4Be"]
+    # Q4Ba-Q4Be so merjeni na 5-stopenjski lestvici (1-5), kar potrjuje sumarnik 1KA.
+    # Obrniti jih je treba s preslikavo 1->5 ... 5->1, ne s 7-stopenjsko.
     distrust_recoded_columns = [
-        "analiza_nezaupanje_t1_recoded_1_7",
-        "analiza_nezaupanje_t2_recoded_1_7",
-        "analiza_nezaupanje_t3_recoded_1_7",
-        "analiza_nezaupanje_t4_recoded_1_7",
-        "analiza_nezaupanje_t5_recoded_1_7",
+        "analiza_nezaupanje_t1_recoded_1_5",
+        "analiza_nezaupanje_t2_recoded_1_5",
+        "analiza_nezaupanje_t3_recoded_1_5",
+        "analiza_nezaupanje_t4_recoded_1_5",
+        "analiza_nezaupanje_t5_recoded_1_5",
     ]
     for raw_col, recoded_col in zip(distrust_source_columns, distrust_recoded_columns):
-        survey[recoded_col] = survey[raw_col].map(reverse_1_to_7)
+        survey[recoded_col] = survey[raw_col].map(reverse_likert_1_to_5)
 
     trust_raw_numeric = survey[trust_source_columns].apply(pd.to_numeric, errors="coerce")
     distrust_raw_numeric = survey[distrust_source_columns].apply(pd.to_numeric, errors="coerce")
@@ -1069,36 +1073,48 @@ def main() -> None:
     survey.loc[trust_new_mask, "analiza_faktor_zaupanje_mean"] = survey.loc[
         trust_new_mask, trust_new_columns
     ].apply(pd.to_numeric, errors="coerce").mean(axis=1)
+    # Nezaupanje je na lestvici 1-5, zaupanje na 1-7. Pred zdruzevanjem je treba
+    # nezaupanje linearno preslikati na metriko 1-7: 1 + (x - 1) * 6 / 4.
+    distrust_on_1_7 = (
+        survey.loc[trust_new_mask, distrust_recoded_columns]
+        .apply(pd.to_numeric, errors="coerce")
+        .apply(lambda col: 1 + (col - 1) * 6 / 4)
+    )
+    trust_on_1_7 = survey.loc[trust_new_mask, trust_new_columns].apply(
+        pd.to_numeric, errors="coerce"
+    )
     survey["analiza_skupna_ocena_zaupanja_mean"] = pd.NA
-    survey.loc[trust_new_mask, "analiza_skupna_ocena_zaupanja_mean"] = survey.loc[
-        trust_new_mask, distrust_recoded_columns + trust_new_columns
-    ].apply(pd.to_numeric, errors="coerce").mean(axis=1)
+    survey.loc[trust_new_mask, "analiza_skupna_ocena_zaupanja_mean"] = pd.concat(
+        [distrust_on_1_7, trust_on_1_7], axis=1
+    ).mean(axis=1)
 
-    satisfaction_source_columns = [
-        "Q2a",
-        "Q2b",
-        "Q2c",
-        "Q2d",
-        "Q2e",
-        "Q2f",
-        "Q2g",
-        "Q2h",
-        "Q3a",
-        "Q3b",
-        "Q3c",
-        "Q3d",
-        "Q3e",
-        "Q3f",
-        "Q3g",
-    ]
+    # Q2a-Q2h (zadovoljstvo z razlago, Hoffman ESS) je merjen na lestvici 1-7,
+    # Q3a-Q3g (izvedljivost) pa na lestvici 1-5. Sumarnik 1KA to potrjuje.
+    # Gre za dva locena konstrukta na razlicnih lestvicah, zato ju ni dovoljeno
+    # povpreciti skupaj.
+    satisfaction_source_columns = ["Q2a", "Q2b", "Q2c", "Q2d", "Q2e", "Q2f", "Q2g", "Q2h"]
+    actionability_source_columns = ["Q3a", "Q3b", "Q3c", "Q3d", "Q3e", "Q3f", "Q3g"]
+
     satisfaction_clean_columns = []
     for source_column in satisfaction_source_columns:
-        target_column = f"analiza_zadovoljstvo_{source_column.lower()}_clean_1_5"
+        target_column = f"analiza_zadovoljstvo_{source_column.lower()}_clean_1_7"
         satisfaction_clean_columns.append(target_column)
+        survey[target_column] = survey[source_column].map(clean_likert_1_to_7)
+
+    actionability_clean_columns = []
+    for source_column in actionability_source_columns:
+        target_column = f"analiza_izvedljivost_{source_column.lower()}_clean_1_5"
+        actionability_clean_columns.append(target_column)
         survey[target_column] = survey[source_column].map(clean_likert_1_to_5)
-    survey["analiza_zadovoljstvo_mean"] = pd.NA
-    survey.loc[valid_mask, "analiza_zadovoljstvo_mean"] = survey.loc[
+
+    survey["analiza_zadovoljstvo_q2_mean"] = pd.NA
+    survey.loc[valid_mask, "analiza_zadovoljstvo_q2_mean"] = survey.loc[
         valid_mask, satisfaction_clean_columns
+    ].apply(pd.to_numeric, errors="coerce").mean(axis=1)
+
+    survey["analiza_izvedljivost_q3_mean"] = pd.NA
+    survey.loc[valid_mask, "analiza_izvedljivost_q3_mean"] = survey.loc[
+        valid_mask, actionability_clean_columns
     ].apply(pd.to_numeric, errors="coerce").mean(axis=1)
 
     participant_counts = (
@@ -1187,7 +1203,12 @@ def main() -> None:
             "skupna_ocena_zaupanja_non_null": int(
                 survey["analiza_skupna_ocena_zaupanja_mean"].notna().sum()
             ),
-            "zadovoljstvo_mean_non_null": int(survey["analiza_zadovoljstvo_mean"].notna().sum()),
+            "zadovoljstvo_q2_mean_non_null": int(
+                survey["analiza_zadovoljstvo_q2_mean"].notna().sum()
+            ),
+            "izvedljivost_q3_mean_non_null": int(
+                survey["analiza_izvedljivost_q3_mean"].notna().sum()
+            ),
         },
     }
 
