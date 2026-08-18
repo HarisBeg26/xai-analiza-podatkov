@@ -13,3 +13,7 @@ node_modules/
 desktop.ini
 Thumbs.db
 .DS_Store
+
+# Zasebni dokumenti, ki ne sodijo v javni repozitorij
+POVZETEK_ANALIZE.md
+msg_filter.sed
