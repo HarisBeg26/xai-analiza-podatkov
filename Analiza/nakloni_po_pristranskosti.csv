@@ -1,0 +1,21 @@
+﻿obdobje,dimenzija,skupina,N,b,SE,p,znacilno
+vsi krogi,Zaupanje (1-5),brez biasa,160,0.076,0.052,0.141,ne
+vsi krogi,Zaupanje (1-5),z biasom,78,0.07,0.087,0.421,ne
+vsi krogi,Nezaupanje (1-5),brez biasa,160,0.01,0.049,0.845,ne
+vsi krogi,Nezaupanje (1-5),z biasom,78,-0.038,0.073,0.607,ne
+vsi krogi,Zadovoljstvo (1-7),brez biasa,180,0.022,0.054,0.686,ne
+vsi krogi,Zadovoljstvo (1-7),z biasom,87,-0.189,0.094,0.044,da
+vsi krogi,Izvedljivost (1-5),brez biasa,180,0.023,0.032,0.466,ne
+vsi krogi,Izvedljivost (1-5),z biasom,87,-0.078,0.059,0.183,ne
+vsi krogi,Mentalni model (0-1),brez biasa,180,0.013,0.009,0.166,ne
+vsi krogi,Mentalni model (0-1),z biasom,87,0.001,0.012,0.906,ne
+krogi 1-4,Zaupanje (1-5),brez biasa,151,0.097,0.062,0.114,ne
+krogi 1-4,Zaupanje (1-5),z biasom,75,0.07,0.1,0.48,ne
+krogi 1-4,Nezaupanje (1-5),brez biasa,151,0.014,0.056,0.795,ne
+krogi 1-4,Nezaupanje (1-5),z biasom,75,-0.023,0.088,0.789,ne
+krogi 1-4,Zadovoljstvo (1-7),brez biasa,171,0.042,0.061,0.496,ne
+krogi 1-4,Zadovoljstvo (1-7),z biasom,84,-0.227,0.112,0.043,da
+krogi 1-4,Izvedljivost (1-5),brez biasa,171,0.025,0.035,0.479,ne
+krogi 1-4,Izvedljivost (1-5),z biasom,84,-0.113,0.07,0.105,ne
+krogi 1-4,Mentalni model (0-1),brez biasa,171,0.012,0.01,0.242,ne
+krogi 1-4,Mentalni model (0-1),z biasom,84,-0.003,0.014,0.856,ne
